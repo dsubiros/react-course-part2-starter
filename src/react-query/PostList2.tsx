@@ -1,3 +1,4 @@
+// Using ReactQuery
 import { useState } from "react";
 import usePosts from "../hooks/usePosts";
 
