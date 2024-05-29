@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import usePosts from "../hooks/usePosts";
 
 const PostList = () => {
