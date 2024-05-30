@@ -26,6 +26,7 @@ const useAddTodo = (onAdd: () => void) => {
         ...todos,
       ]);
 
+      // This line affects the UI
       onAdd();
 
       return { previousTodos };
@@ -36,31 +37,9 @@ const useAddTodo = (onAdd: () => void) => {
       queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, ctx?.previousTodos);
     },
     onSuccess: (savedTodo, newTodo) => {
-      // console.log(savedTodo);
-
       queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos) =>
         todos?.map((todo) => (todo.id === newTodo.id ? savedTodo : todo))
       );
-
-      // APPROACH 1: Invalidating the Cache
-      // queryClient.invalidateQueries({
-      //   queryKey: CACHE_KEY_TODOS
-      // });
-
-      // APPROACH 2: Updating the data in the Cache
-      // queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos) => [
-      //   savedTodo,
-      //   ...(todos || []),
-      // ]);
-      // if (ref.current) ref.current.value = "";
-
-      // Using onMutate
-      // queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos) => {
-      //   const data = [...(todos || [])];
-      //   const idx = data.findIndex((x) => x.id === 0);
-      //   if (idx !== -1) data[idx] = savedTodo;
-      //   return data;
-      // });
     },
   });
 };

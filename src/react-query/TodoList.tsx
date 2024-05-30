@@ -1,15 +1,15 @@
 import useTodos from "../hooks/useTodos";
 
 const TodoList = () => {
-  const { data: todos, error, isLoading } = useTodos();
-  
+  const { data, error, isLoading } = useTodos();
+
   if (isLoading) return <p>Loading...</p>;
 
   if (error) return <p>{error.message}</p>;
 
   return (
     <ul className="list-group">
-      {todos?.map((todo) => (
+      {data?.map((todo) => (
         <li key={todo.id} className="list-group-item">
           {todo.id} - {todo.title}
         </li>
