@@ -34,7 +34,8 @@ const TodoForm = () => {
         </div>
         <div className="col">
           <button disabled={addTodo.isLoading} className="btn btn-primary">
-            {addTodo.isLoading ? "Adding..." : "Add"}
+            Add
+            {/* {addTodo.isLoading ? "Adding..." : "Add"} */}
           </button>
         </div>
       </form>
