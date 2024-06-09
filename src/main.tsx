@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import App from "./App";
 import "./index.css";
 import App2 from "./App2";
+import App3 from "./App3";
 
 const queryClient = new QueryClient({
   // defaultOptions: {
@@ -24,7 +25,7 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App2 />
+      <App3 />
       <ReactQueryDevtools />
     </QueryClientProvider>
   </React.StrictMode>
