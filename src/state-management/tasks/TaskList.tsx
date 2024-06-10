@@ -1,4 +1,4 @@
-import useAuth from "../hooks/useAuth";
+import { useAuth } from "../auth";
 import useTasks from "./useTasks";
 
 const TaskList = () => {
@@ -13,7 +13,7 @@ const TaskList = () => {
 
   return (
     <>
-    <p>User: {user}</p>
+      <p>User: {user}</p>
       <button
         onClick={() =>
           dispatch({

@@ -1,17 +1,17 @@
-import { useContext } from "react";
-import AuthContext from "./contexts/authContext";
-import TasksContext from "./tasks/tasksContext";
-import LoginStatus from "./LoginStatus";
+import { useAuth } from "./auth";
+import LoginStatus from "./auth/LoginStatus";
+import { useTasks } from "./tasks";
 
 const NavBar = () => {
-  const {
-    tasks: { length: count },
-  } = useContext(TasksContext);
-  const { user } = useContext(AuthContext);
+  // const { tasks } = useContext(TasksContext);
+  const { tasks } = useTasks();
+  const { user } = useAuth();
 
   return (
     <nav className="navbar d-flex justify-content-between">
-      {!!user && <span className="badge text-bg-secondary">{count}</span>}
+      {!!user && (
+        <span className="badge text-bg-secondary">{tasks.length}</span>
+      )}
       <LoginStatus />
     </nav>
   );
