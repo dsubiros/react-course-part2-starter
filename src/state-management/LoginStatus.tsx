@@ -2,9 +2,7 @@ import { useReducer } from "react";
 import authReducer from "./reducers/authReducer";
 
 const LoginStatus = () => {
-  // const [user, setUser] = useState('');
   const [user, dispatch] = useReducer(authReducer, '');
-
 
   if (user)
     return (
@@ -19,7 +17,7 @@ const LoginStatus = () => {
     );
   return (
     <div>
-      <a onClick={() => dispatch({type: 'LOGIN', user: 'dariel.subiros'})} href="#">
+      <a onClick={() => dispatch({type: 'LOGIN', username: 'dariel.subiros'})} href="#">
         Login
       </a>
     </div>
