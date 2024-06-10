@@ -1,11 +1,9 @@
 import { useReducer } from "react";
 import "./App.css";
 import AuthProvider from "./state-management/AuthProvider";
-import AuthContext from "./state-management/contexts/authContext";
 import TasksContext from "./state-management/contexts/tasksContext";
 import HomePage from "./state-management/HomePage";
 import NavBar from "./state-management/NavBar";
-import authReducer from "./state-management/reducers/authReducer";
 import tasksReducer from "./state-management/reducers/tasksReducer";
 
 function App4() {
