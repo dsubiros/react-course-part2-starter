@@ -1,12 +1,12 @@
 import { useReducer } from "react";
 import "./App.css";
-import TasksContext from "./state-management/contexts/tasksContext";
+import TasksContext from "./state-management/tasks/tasksContext";
 import Counter from "./state-management/Counter";
 import HomePage from "./state-management/HomePage";
 import LoginStatus from "./state-management/LoginStatus";
 import NavBar from "./state-management/NavBar";
-import tasksReducer from "./state-management/reducers/tasksReducer";
-import TaskList from "./state-management/TaskList";
+import tasksReducer from "./state-management/tasks/tasksReducer";
+import TaskList from "./state-management/tasks/TaskList";
 
 function App3() {
   const [tasks, dispatch] = useReducer(tasksReducer, []);
