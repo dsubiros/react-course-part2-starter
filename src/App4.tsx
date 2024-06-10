@@ -13,12 +13,6 @@ function App4() {
       </TasksProvider>
     </AuthProvider>
   );
-
-  // return (
-  //   <AuthContext.Provider value={{ user, dispatch }}>
-  //     <LoginStatus />
-  //   </AuthContext.Provider>
-  // );
 }
 
 export default App4;
