@@ -9,7 +9,7 @@ const TaskList = () => {
 
   const { tasks, dispatch } = useTasks();
   // const { user } = useAuth();
-  const { userName: user } = useAuthStore();
+  const { user: user } = useAuthStore();
 
   if (!user) return null;
 

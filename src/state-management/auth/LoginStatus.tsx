@@ -1,17 +1,16 @@
 import useAuthStore from "./store";
-import useAuth from "./useAuth";
 
 const LoginStatus = () => {
   // const [user, dispatch] = useReducer(authReducer, '');
   // const { user, dispatch } = useContext(AuthContext);
   // const { user, dispatch } = useAuth();
-  const { userName, login, logout } = useAuthStore();
+  const { user, login, logout } = useAuthStore();
 
-  if (userName)
+  if (user)
     return (
       <>
         <div>
-          <span className="mx-2">{userName}</span>
+          <span className="mx-2">{user}</span>
           <a onClick={() => logout()} href="#">
             Logout
           </a>

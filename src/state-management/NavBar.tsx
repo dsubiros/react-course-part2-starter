@@ -7,7 +7,7 @@ import { useTasks } from "./tasks";
 const NavBar = () => {  
   const { tasks } = useTasks();
   // const { user } = useAuth();
-  const { userName: user } = useAuthStore();
+  const { user } = useAuthStore();
   const {counter} = useCounterStore();
 
   return (

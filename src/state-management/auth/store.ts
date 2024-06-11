@@ -1,15 +1,15 @@
 import { create } from "zustand";
 
 interface AuthStore {
-  userName: string;
+  user: string;
   login: (userName: string) => void;
   logout: () => void;
 }
 
 const useAuthStore = create<AuthStore>((set) => ({
-  userName: "",
-  login: (userName) => set(() => ({ userName })),
-  logout: () => set(() => ({ userName: "" })),
+  user: "",
+  login: (user) => set(() => ({ user })),
+  logout: () => set(() => ({ user: "" })),
 }));
 
 export default useAuthStore;
