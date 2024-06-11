@@ -1,4 +1,5 @@
 import { useAuth } from "../auth";
+import useAuthStore from "../auth/store";
 import useTasks from "./useTasks";
 
 const TaskList = () => {
@@ -7,7 +8,8 @@ const TaskList = () => {
   // const { user } = useContext(AuthContext);
 
   const { tasks, dispatch } = useTasks();
-  const { user } = useAuth();
+  // const { user } = useAuth();
+  const { userName: user } = useAuthStore();
 
   if (!user) return null;
 

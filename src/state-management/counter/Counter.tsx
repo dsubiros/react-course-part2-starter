@@ -1,19 +1,15 @@
-import useCounter from "./useCounter";
+import useCounterStore from "./store";
 
 const Counter = () => {
-  const [value, dispatch] = useCounter();
+  const { counter, increment, reset } = useCounterStore();
 
   return (
     <div>
-      Counter ({value})
-      <button
-        // onClick={() => setValue(value + 1)}
-        onClick={() => dispatch({type: 'INCREMENT'})}
-        className="btn btn-primary mx-1"
-      >
+      Counter ({counter})
+      <button onClick={() => increment()} className="btn btn-primary mx-1">
         Increment
       </button>
-      <button onClick={() => dispatch({type: 'RESET'})} className="btn btn-primary mx-1">
+      <button onClick={() => reset()} className="btn btn-primary mx-1">
         Reset
       </button>
     </div>
