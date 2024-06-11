@@ -1,4 +1,3 @@
-import { useAuth } from "./auth";
 import LoginStatus from "./auth/LoginStatus";
 import useAuthStore from "./auth/store";
 import useCounterStore from "./counter/store";
