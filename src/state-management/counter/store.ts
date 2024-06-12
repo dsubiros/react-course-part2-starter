@@ -17,8 +17,8 @@ const useCounterStore = create<CounterStore>((set) => ({
     })),
   reset: () =>
     set(() => ({
-      max: 10,
-      // counter: 0,
+      // max: 10,
+      counter: 0,
     })),
 }));
 

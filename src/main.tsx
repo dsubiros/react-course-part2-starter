@@ -9,6 +9,8 @@ import App2 from "./App2";
 import App3 from "./App3";
 import App4 from "./App4";
 import App5 from "./App5";
+import { RouterProvider } from "react-router-dom";
+import router from "./routing/routes";
 
 const queryClient = new QueryClient({
   // defaultOptions: {
@@ -28,7 +30,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       {/* <App3 /> */}
-      <App5 />
+      {/* <App5 /> */}
+      <RouterProvider router={router}/>
       <ReactQueryDevtools />
     </QueryClientProvider>
   </React.StrictMode>
